@@ -1,4 +1,4 @@
-import style from './navbar.module.css'
+import style from './navbar.module.scss'
 import Image from 'next/image'
 
 const Element = ({ label, link, links }) => {
@@ -9,6 +9,7 @@ export default function NavBar({ navElements }) {
   return (
     <nav className={style.navbar}>
       <Image
+        className={style.logo}
         src="/logo.svg"
         width={121}
         height={29}
@@ -18,8 +19,8 @@ export default function NavBar({ navElements }) {
         <div className={style.elements}>
           {navElements?.map(el => <Element {...el} />)}
         </div>
-        <div>
-          <a className={style.link} href="/profile">
+        <div className={style.userNav}>
+          <a className={style.icon} href="/profile">
             <Image
               src="/static/profile.svg"
               width={32}
@@ -27,7 +28,7 @@ export default function NavBar({ navElements }) {
               alt="Profile"
             />
           </a>
-          <a className={style.link} href="/cart">
+          <a className={style.icon} href="/cart">
             <Image
               src="/static/cart.svg"
               width={32}
