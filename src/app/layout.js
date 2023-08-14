@@ -1,11 +1,20 @@
 import './globals.css'
-import { Poppins } from 'next/font/google'
-import Footer from '../components/Footer'
-import NavBar from '../components/NavBar'
+import { Poppins, Roboto } from 'next/font/google'
+import Footer from '@/components/Footer'
+import NavBar from '@/components/NavBar'
 
-const inter = Poppins({
+import { getLayoutData } from '@/dataMock'
+
+const poppins = Poppins({
   subsets: ['latin'],
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  variable: '--font-poppins',
+})
+
+const roboto = Roboto({
+  subsets: ['latin'],
+  weight: ['100', '300', '400', '500', '700', '900'],
+  variable: '--font-roboto',
 })
 
 export const metadata = {
@@ -13,11 +22,21 @@ export const metadata = {
   description: 'Mbunity test task',
 }
 
-export default function RootLayout({ children }) {
+async function getData() {
+  const res = await getLayoutData()
+  if (!res.ok) {
+    throw new Error('Failed to fetch data')
+  }
+  return res.json()
+}
+
+export default async function RootLayout({ children }) {
+  const data = await getData()
+
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <NavBar />
+      <body className={`${poppins.variable} ${roboto.variable}`}>
+        <NavBar navElements={data.navbar}/>
         <main>
           {children}
         </main>

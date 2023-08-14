@@ -1,0 +1,26 @@
+.navbar {
+  z-index: 101;
+  position: absolute;
+  padding: 40px 100px;
+  background-color: #FBFBFB;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+}
+
+.elements {
+  display: flex;
+}
+
+.link {
+  text-decoration: none;
+  color: #000;
+  font-size: 16px;
+  font-family: var(--font-roboto);
+}
