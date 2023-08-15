@@ -11,7 +11,7 @@ const Contact = ({ icon, text }) => {
         height={20}
         alt={icon}
       />
-      <p>{text}</p>
+      <p dangerouslySetInnerHTML={{ __html: text }}></p>
     </div>
   )
 }
@@ -57,9 +57,11 @@ const CardInfo = ({ data }) => {
 }
 
 const CardForm = () => {
-  return <form>
-    Card Form
-  </form>
+  return (
+    <form>
+      Card Form
+    </form>
+  )
 }
 
 export default function ContactCard({ card }) {
