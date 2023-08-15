@@ -21,7 +21,7 @@ const CardForm = ({ data }) => {
         <InputField label={data.email} register={register('email')} />
         <InputField label={data.phone} register={register('phone')} />
       </div>
-      <SelectField label={data.subject.label} register={register('subject')} />
+      <SelectField values={['subj1', 'subj2', 'subj3', 'subj4']} data={data.subject}  register={register('subject')} />
       <InputField label={data.message.label} register={register('message')} />
       <Submit />
     </form>

@@ -9,20 +9,23 @@ export const InputField = ({ register, label }) => {
   )
 }
 
-export const SelectField = ({ register }) => {
+const RadioInput = ({register, value, label}) => {
   return (
     <div>
+      <input id={value} {...register} type="radio" value={value} />
+      <label htmlFor={value}>{label}</label>
+    </div>
+  )
+}
+
+export const SelectField = ({ register, data, values }) => {
+  return (
+    <div>
+      <h5>{data.title}</h5>
       <div>
-        <input id={register.name + '1'} {...register} type="radio" value="value1" />
-        <label htmlFor={register.name + '1'}>Label</label>
-      </div>
-      <div>
-        <input id={register.name + '2'} {...register} type="radio" value="value2" />
-        <label htmlFor={register.name + '2'}>Label</label>
-      </div>
-      <div>
-        <input id={register.name + '3'} {...register} type="radio" value="value3" />
-        <label htmlFor={register.name + '3'}>Label</label>
+        {values.map((value, idx) =>
+          <RadioInput key={value} register={register} value={value} label={data.labels[idx]} />
+        )}
       </div>
     </div>
   )
