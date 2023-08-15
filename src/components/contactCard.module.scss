@@ -8,16 +8,27 @@
   display: flex;
 }
 
-.cardForm {
+.cardFormWrapper {
   padding: 50px;
   width: 100%;
 }
 
-.userContacts {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  max-width: 595px;
-  height: 172px;
-  gap: 40px;
+.cardForm {
+  &Contacts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    max-width: 595px;
+    height: 172px;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+
+  &Subject {
+    margin-bottom: 45px;
+  }
+
+  &Message {
+    margin-bottom: 45px;
+  }
 }

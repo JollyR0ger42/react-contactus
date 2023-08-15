@@ -14,15 +14,25 @@ const CardForm = ({ data }) => {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <div className={style.userContacts}>
+    <form  className={style.cardForm} onSubmit={handleSubmit(onSubmit)}>
+      <div className={style.cardFormContacts}>
         <InputField label={data.firstName} register={register('firstName')} />
         <InputField label={data.lastName} register={register('lastName')} />
         <InputField label={data.email} register={register('email')} />
         <InputField label={data.phone} register={register('phone')} />
       </div>
-      <SelectField values={['subj1', 'subj2', 'subj3', 'subj4']} data={data.subject}  register={register('subject')} />
-      <InputField label={data.message.label} register={register('message')} />
+      <SelectField
+        className={style.cardFormSubject}
+        values={['subj1', 'subj2', 'subj3', 'subj4']}
+        data={data.subject}
+        register={register('subject')}
+      />
+      <InputField
+        className={style.cardFormMessage}
+        label={data.message.label}
+        register={register('message')}
+        placeholder={data.message.placeholder}
+      />
       <Submit />
     </form>
   )
@@ -32,7 +42,7 @@ export default function ContactCard({ card }) {
   return (
     <div className={style.card}>
       <ContactCardInfo data={card.info} />
-      <div className={style.cardForm}>
+      <div className={style.cardFormWrapper}>
         <CardForm  data={card.form} />
       </div>
     </div>

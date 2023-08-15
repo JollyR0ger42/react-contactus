@@ -39,4 +39,42 @@
     font-size: 14px;
     margin-bottom: 14px;
   }
+
+  &Options {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px
+  }
+}
+
+.radioInput {
+  &Label {
+    display: flex;
+    align-items: center;
+  }
+
+  &Wrapper {
+    width: 13px;
+    height: 13px;
+    border: 1px solid black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    flex-shrink: 0;
+  }
+
+  &Input, &Check {
+    display: none;
+  }
+
+  &Input:checked+&Check {
+    display: block;
+  }
+
+  &Text {
+    font-size: 12px;
+  }
 }
