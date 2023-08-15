@@ -1,17 +1,33 @@
-export const InputField = () => {
+export const InputField = ({register}) => {
   return (
-    <div>InputField</div>
+    <div>
+      <label htmlFor={register.name}>Label</label>
+      <input id={register.name} {...register} />
+    </div>
   )
 }
 
-export const SelectField = () => {
+export const SelectField = ({register}) => {
   return (
-    <div>SelectField</div>
+    <div>
+      <div>
+        <input  id={register.name + '1'} {...register} type="radio" value="value1"/>
+        <label htmlFor={register.name + '1'}>Label</label>
+      </div>
+      <div>
+        <input  id={register.name + '2'} {...register} type="radio" value="value2"/>
+        <label htmlFor={register.name + '2'}>Label</label>
+      </div>
+      <div>
+        <input  id={register.name + '3'} {...register} type="radio" value="value3"/>
+        <label htmlFor={register.name + '3'}>Label</label>
+      </div>
+    </div>
   )
 }
 
-export const Button = () => {
+export const Submit = () => {
   return (
-    <div>Button</div>
+    <input type="submit" />
   )
 }

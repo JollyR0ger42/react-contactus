@@ -1,19 +1,27 @@
+"use client";
 import style from './contactCard.module.scss'
-import { InputField, SelectField, Button } from './FormFields'
+import { InputField, SelectField, Submit } from './FormFields'
 import ContactCardInfo from './ContactCardInfo'
+import { useForm } from 'react-hook-form'
 
 const CardForm = () => {
+  const { register, handleSubmit } = useForm();
+
+  const onSubmit = (data) => {
+    console.log(data)
+  }
+
   return (
-    <form>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <div>
-        <InputField />
-        <InputField />
-        <InputField />
-        <InputField />
+        <InputField register={register('firstName')} />
+        <InputField register={register('lastName')} />
+        <InputField register={register('email')} />
+        <InputField register={register('phone')} />
       </div>
-      <SelectField />
-      <InputField />
-      <Button />
+      <SelectField  register={register('subject')} />
+      <InputField register={register('message')} />
+      <Submit />
     </form>
   )
 }

@@ -46,10 +46,10 @@ const CardInfo = ({ data }) => {
         <h2 className={style.infoTitle}>{data.title}</h2>
         <p className={style.infoParag}>{data.parag}</p>
         <div className={style.contacts}>
-          {data.contacts.map(contact => <Contact {...contact} />)}
+          {data.contacts.map((contact, idx) => <Contact key={idx} {...contact} />)}
         </div>
         <div className={style.socials}>
-          {data.socials.map(social => <Social {...social} />)}
+          {data.socials.map((social, idx) => <Social key={idx} {...social} />)}
         </div>
       </div>
     </div>
