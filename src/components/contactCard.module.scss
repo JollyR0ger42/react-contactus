@@ -20,6 +20,7 @@
 }
 
 .cardInfoContent {
+  position: relative;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -48,9 +49,36 @@
   font-size: 18px;
 }
 
-.infoLinks {
+.socials {
   display: flex;
   justify-content: space-between;
+  max-width: 138px;
+}
+
+.social {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #1B1B1B;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s all;
+
+  &:hover {
+    background-color: #fff;
+    transition: 0.5s all;
+  }
+}
+
+.socailIcon {
+  filter: invert(0);
+  transition: 0.5s all;
+
+  .social:hover & {
+    filter: invert(1);
+    transition: 0.5s all;
+  }
 }
 
 .contacts {
@@ -62,4 +90,10 @@
 
 .contact {
   margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.contactIcon {
+  margin-right: 27px;
 }

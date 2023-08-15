@@ -1,10 +1,39 @@
 import style from './contactCard.module.scss'
 import Image from 'next/image'
 
-const CardInfo = () => {
+const Contact = ({ icon, text }) => {
+  return (
+    <div className={style.contact}>
+      <Image
+        className={style.contactIcon}
+        src={`/static/${icon}.svg`}
+        width={20}
+        height={20}
+        alt={icon}
+      />
+      <p>{text}</p>
+    </div>
+  )
+}
+
+const Social = ({ icon, link }) => {
+  return (
+    <a href={link} target="_blank" className={style.social}>
+      <Image
+        className={style.socailIcon}
+        src={`/static/${icon}.svg`}
+        width={15}
+        height={15}
+        alt={icon}
+      />
+    </a>
+  )
+}
+
+const CardInfo = ({ data }) => {
   return (
     <div className={style.cardInfo}>
-      {false && <div className={style.infoBgWrapper}>
+      <div className={style.infoBgWrapper}>
         <Image
           className={style.infoBg}
           src="/static/infoBg.svg"
@@ -12,25 +41,15 @@ const CardInfo = () => {
           height={209}
           alt=""
         />
-      </div>}
+      </div>
       <div className={style.cardInfoContent}>
-        <h2 className={style.infoTitle}>Contact Information</h2>
-        <p className={style.infoParag}>Say something to start a live chat!</p>
+        <h2 className={style.infoTitle}>{data.title}</h2>
+        <p className={style.infoParag}>{data.parag}</p>
         <div className={style.contacts}>
-          <div className={style.contact}>
-            +1012 3456 789
-          </div>
-          <div className={style.contact}>
-            demo@gmail.com
-          </div>
-          <div className={style.contact}>
-            132 Dartmouth Street Boston, Massachusetts 02156 United States
-          </div>
+          {data.contacts.map(contact => <Contact {...contact} />)}
         </div>
-        <div className={style.infoLinks}>
-          <p>twitor</p>
-          <p>insta</p>
-          <p>diss</p>
+        <div className={style.socials}>
+          {data.socials.map(social => <Social {...social} />)}
         </div>
       </div>
     </div>
@@ -43,10 +62,10 @@ const CardForm = () => {
   </form>
 }
 
-export default function ContactCard() {
+export default function ContactCard({ card }) {
   return (
     <div className={style.card}>
-      <CardInfo />
+      <CardInfo data={card.info} />
       <CardForm />
     </div>
   )

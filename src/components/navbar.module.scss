@@ -1,5 +1,5 @@
 .navbar {
-  z-index: 101;
+  z-index: 1001;
   position: absolute;
   padding: 40px 100px;
   background-color: #FBFBFB;
@@ -41,7 +41,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 98px;
+  max-width: 98px;
+  flex-grow: 4;
 
   & > *:not(:last-child) {
     margin-right: 10px;
