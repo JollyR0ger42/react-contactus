@@ -21,7 +21,7 @@ const RadioInput = ({register, value, label}) => {
 export const SelectField = ({ register, data, values }) => {
   return (
     <div>
-      <h5>{data.title}</h5>
+      <h5 className={style.selectFieldTitle}>{data.title}</h5>
       <div>
         {values.map((value, idx) =>
           <RadioInput key={value} register={register} value={value} label={data.labels[idx]} />

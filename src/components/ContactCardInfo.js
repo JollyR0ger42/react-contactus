@@ -33,7 +33,7 @@ const Social = ({ icon, link }) => {
 const CardInfo = ({ data }) => {
   return (
     <div className={style.cardInfo}>
-      <div className={style.infoBgWrapper}>
+      <div className={style.cardInfoBgWrapper}>
         <Image
           className={style.infoBg}
           src="/static/infoBg.svg"
@@ -43,8 +43,8 @@ const CardInfo = ({ data }) => {
         />
       </div>
       <div className={style.cardInfoContent}>
-        <h2 className={style.infoTitle}>{data.title}</h2>
-        <p className={style.infoParag}>{data.parag}</p>
+        <h2 className={style.cardInfoTitle}>{data.title}</h2>
+        <p className={style.cardInfoParag}>{data.parag}</p>
         <div className={style.contacts}>
           {data.contacts.map((contact, idx) => <Contact key={idx} {...contact} />)}
         </div>

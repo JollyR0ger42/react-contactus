@@ -4,32 +4,39 @@
   height: 55px;
   display: flex;
   align-items: flex-end;
-}
 
-.inputFieldInput {
-  width: 100%;
-  font-size: 14px;
-  font-family: var(--font-poppins);
-  border: 0;
-  border-bottom: 1px solid #8D8D8D;
-  color: #8D8D8D;
-  outline: none;
-  padding: 10px 3px;
+  &Input {
+    width: 100%;
+    font-size: 14px;
+    font-family: var(--font-poppins);
+    border: 0;
+    border-bottom: 1px solid #8D8D8D;
+    color: #8D8D8D;
+    outline: none;
+    padding: 10px 3px;
 
-  &:focus {
-    color: #000;
-    border-bottom: 1px solid #000;
+    &:focus {
+      color: #000;
+      border-bottom: 1px solid #000;
+    }
+  }
+
+  &Label {
+    font-size: 12px;
+    color: #8D8D8D;
+    position: absolute;
+    top: 0;
+    left: 1px;
+
+    .inputFieldInput:focus+& {
+      color: #000;
+    }
   }
 }
 
-.inputFieldLabel {
-  font-size: 12px;
-  color: #8D8D8D;
-  position: absolute;
-  top: 0;
-  left: 1px;
-
-  .inputFieldInput:focus + & {
-    color: #000;
+.selectField {
+  &Title {
+    font-size: 14px;
+    margin-bottom: 14px;
   }
 }
