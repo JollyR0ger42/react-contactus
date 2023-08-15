@@ -4,6 +4,8 @@ import { InputField, SelectField, Submit } from './FormFields'
 import ContactCardInfo from './ContactCardInfo'
 import { useForm } from 'react-hook-form'
 
+// ^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$
+
 const CardForm = () => {
   const { register, handleSubmit } = useForm();
 

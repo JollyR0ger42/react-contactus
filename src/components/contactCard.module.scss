@@ -14,13 +14,10 @@
 }
 
 .userContacts {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-
-
-  & > * {
-    max-width: 278px;
-    margin-bottom: 45px;
-  }
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  max-width: 595px;
+  height: 172px;
+  gap: 40px;
 }
