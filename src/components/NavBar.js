@@ -1,4 +1,4 @@
-import style from './navbar.module.scss'
+import style from './navBar.module.scss'
 import Image from 'next/image'
 
 const Element = ({ label, link, links }) => {
