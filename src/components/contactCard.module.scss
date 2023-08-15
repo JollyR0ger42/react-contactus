@@ -9,6 +9,18 @@
 }
 
 .cardForm {
-  padding: 50px 60px;
+  padding: 50px;
   width: 100%;
+}
+
+.userContacts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+
+  & > * {
+    max-width: 278px;
+    margin-bottom: 45px;
+  }
 }

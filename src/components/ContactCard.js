@@ -13,7 +13,7 @@ const CardForm = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div>
+      <div className={style.userContacts}>
         <InputField register={register('firstName')} />
         <InputField register={register('lastName')} />
         <InputField register={register('email')} />
