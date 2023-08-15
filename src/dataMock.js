@@ -93,6 +93,24 @@ export const getContactPageData = () => {
                       link: 'https://discord.com/'
                     },
                   ]
+                },
+                form: {
+                  firstName: 'First Name',
+                  lastName: 'Last Name',
+                  email: 'Email',
+                  phone: 'Phone Number',
+                  subject: {
+                    title: 'Select Subject?',
+                    labels: ['General Inquiry', 'General Inquiry', 'General Inquiry', 'General Inquiry']
+                  },
+                  message: {
+                    label: 'Message',
+                    placeholder: 'Write your message..'
+                  },
+                  submit: {
+                    label: 'Send Message',
+                    url: '/send_to'
+                  }
                 }
               }
             }
