@@ -19,7 +19,7 @@ const CardForm = () => {
         <InputField register={register('email')} />
         <InputField register={register('phone')} />
       </div>
-      <SelectField  register={register('subject')} />
+      <SelectField register={register('subject')} />
       <InputField register={register('message')} />
       <Submit />
     </form>
@@ -30,7 +30,9 @@ export default function ContactCard({ card }) {
   return (
     <div className={style.card}>
       <ContactCardInfo data={card.info} />
-      <CardForm />
+      <div className={style.cardForm}>
+        <CardForm />
+      </div>
     </div>
   )
 }

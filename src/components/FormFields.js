@@ -1,8 +1,10 @@
+import style from './formField.module.scss'
+
 export const InputField = ({register}) => {
   return (
-    <div>
-      <label htmlFor={register.name}>Label</label>
-      <input id={register.name} {...register} />
+    <div className={style.inputField}>
+      <input className={style.inputFieldInput} id={register.name} {...register} />
+      <label className={style.inputFieldLabel} htmlFor={register.name}>Label</label>
     </div>
   )
 }
