@@ -22,6 +22,22 @@
     @media (max-width: 800px) {
       max-width: 100%;
     }
+
+    @media (max-width: 640px) {
+      display: none;
+
+      &Show {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        align-items: stretch;
+        padding: 30px 23px;
+      }
+    }
   }
 
   &Logo {
@@ -32,11 +48,20 @@
     flex: 1;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     margin-right: 5%;
+
+    &Show {
+      flex-direction: column;
+    }
   
-    & > * {
+    & > *:not(:last-child) {
       margin-right: 10px;
+
+      @media (max-width: 640px) {
+        margin-right: 0;
+        margin-bottom: 30px;
+      }
     }
   }
 
@@ -46,6 +71,11 @@
     align-items: center;
     max-width: 98px;
     flex-grow: 4;
+    align-self: center;
+
+    @media (max-width: 640px) {
+      width: 98px;
+    }
   
     & > *:not(:last-child) {
       margin-right: 10px;
@@ -54,6 +84,18 @@
     &Icon {
       height: 32px;
     }
+  }
+
+  &Menu {
+    display: none;
+
+    @media (max-width: 640px) {
+      display: block;
+    }
+  }
+
+  &Show {
+    filter: invert(1);
   }
 }
 
@@ -65,6 +107,10 @@
   display: flex;
   align-items: center;
   white-space: nowrap;
+
+  @media (max-width: 640px) {
+    font-size: 14px;
+  }
 }
 
 .dropdown {
@@ -78,6 +124,11 @@
     border-radius: 5px;
     left: 0;
     top: 25px;
+
+    @media (max-width: 640px) {
+      position: relative;
+      top: 0;
+    }
 
     & > *:not(:last-child) {
       margin-bottom: 10px;

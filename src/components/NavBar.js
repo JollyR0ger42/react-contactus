@@ -1,7 +1,7 @@
 "use client";
 import style from './navBar.module.scss'
 import Image from 'next/image'
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 
 const DropdownLinks = ({ label, links }) => {
   const [show, setShow] = useState(false);
@@ -34,8 +34,15 @@ const Element = ({ label, link, links }) => {
 }
 
 export default function NavBar({ navElements }) {
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    const resizeEvent = addEventListener("resize", () => setShow(false));
+    return () => removeEventListener(resizeEvent)
+  }, [])
+
   return (
-    <nav className={style.nav}>
+    <nav className={`${style.nav} ${show ? style.navShow : ''}`}>
       <Image
         className={style.navLogo}
         src="/logo.svg"
@@ -43,8 +50,8 @@ export default function NavBar({ navElements }) {
         height={29}
         alt="Logo"
       />
-      <div className={style.navLinks}>
-        <div className={style.navElements}>
+      <div className={`${style.navLinks}  ${show ? style.navLinksShow : ''}`}>
+        <div className={`${style.navElements}  ${show ? style.navElementsShow : ''}`}>
           {navElements?.map((el, idx) => <Element key={idx} {...el} />)}
         </div>
         <div className={style.navUser}>
@@ -65,6 +72,14 @@ export default function NavBar({ navElements }) {
             />
           </a>
         </div>
+      </div>
+      <div onClick={() => setShow(!show)} className={style.navMenu}>
+        <Image
+          src={`/static/${show ? 'close' : 'menu'}.svg`}
+          width={24}
+          height={24}
+          alt="Menu"
+        />
       </div>
     </nav>
   )
