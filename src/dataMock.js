@@ -43,7 +43,86 @@ export const getLayoutData = () => {
                 label: 'Contact',
                 link: '/contact'
               }
-            ]
+            ],
+            footer: {
+              contacts: [
+                {
+                  icon: 'phone',
+                  text: '+1012 3456 789',
+                },
+                {
+                  icon: 'email',
+                  text: 'demo@gmail.com',
+                },
+                {
+                  icon: 'location',
+                  text: '132 Dartmouth Street Boston,<br>Massachusetts 02156 United States',
+                }
+              ],
+              groups: [
+                {
+                  title: 'Company',
+                  links: [
+                    {
+                      label: 'About',
+                      url: '/url'
+                    },
+                    {
+                      label: 'Contact',
+                      url: '/url'
+                    },
+                    {
+                      label: 'Blogs',
+                      url: '/url'
+                    },
+                  ]
+                },
+                {
+                  title: 'Legal',
+                  links: [
+                    {
+                      label: 'Privacy Policy',
+                      url: '/url'
+                    },
+                    {
+                      label: 'Terms & Services',
+                      url: '/url'
+                    },
+                    {
+                      label: 'Terms of Use',
+                      url: '/url'
+                    },
+                    {
+                      label: 'Refund Policy',
+                      url: '/url'
+                    },
+                  ]
+                },
+                {
+                  title: 'Quick Links',
+                  links: [
+                    {
+                      label: 'Techlabz Keybox',
+                      url: '/url'
+                    },
+                    {
+                      label: 'Downloads',
+                      url: '/url'
+                    },
+                    {
+                      label: 'Forum',
+                      url: '/url'
+                    },
+                  ]
+                },
+              ],
+              joinForm: {
+                title: 'Join Our Newsletter',
+                button: 'Subscribe',
+                placeholder: 'Your email address',
+                help: '* Will send you weekly updates for your better tool management.'
+              }
+            }
           }
         }
       })
