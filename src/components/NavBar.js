@@ -51,7 +51,7 @@ export default function NavBar({ navElements }) {
       />
       <div className={style.navLinks}>
         <div className={style.navElements}>
-          {navElements?.map(el => <Element {...el} />)}
+          {navElements?.map((el, idx) => <Element key={idx} {...el} />)}
         </div>
         <div className={style.navUser}>
           <a className={style.navUserIcon} href="/profile">

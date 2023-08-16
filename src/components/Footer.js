@@ -1,4 +1,4 @@
-export default function Footer({}) {
+export default function Footer({contacts, groups, joinForm}) {
   return (
     <nav>
       Footer

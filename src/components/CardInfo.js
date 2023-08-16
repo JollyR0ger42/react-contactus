@@ -1,20 +1,6 @@
 import style from './cardInfo.module.scss'
 import Image from 'next/image'
-
-const Contact = ({ icon, text }) => {
-  return (
-    <div className={style.contact}>
-      <Image
-        className={style.contactIcon}
-        src={`/static/${icon}.svg`}
-        width={20}
-        height={20}
-        alt={icon}
-      />
-      <p dangerouslySetInnerHTML={{ __html: text }}></p>
-    </div>
-  )
-}
+import BlockContacts from './BlockContacts'
 
 const Social = ({ icon, link }) => {
   return (
@@ -45,9 +31,7 @@ const CardInfo = ({ data }) => {
       <div className={style.cardInfoContent}>
         <h2 className={style.cardInfoTitle}>{data.title}</h2>
         <p className={style.cardInfoParag}>{data.parag}</p>
-        <div className={style.contacts}>
-          {data.contacts.map((contact, idx) => <Contact key={idx} {...contact} />)}
-        </div>
+        <BlockContacts contacts={data.contacts} />
         <div className={style.socials}>
           {data.socials.map((social, idx) => <Social key={idx} {...social} />)}
         </div>
