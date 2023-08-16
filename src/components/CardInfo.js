@@ -21,7 +21,7 @@ const CardInfo = ({ data }) => {
     <div className={style.cardInfo}>
       <div className={style.cardInfoBgWrapper}>
         <Image
-          className={style.infoBg}
+          className={style.cardInfoBg}
           src="/static/infoBg.svg"
           width={208}
           height={209}
@@ -32,7 +32,7 @@ const CardInfo = ({ data }) => {
         <h2 className={style.cardInfoTitle}>{data.title}</h2>
         <p className={style.cardInfoParag}>{data.parag}</p>
         <div style={{height: '200px'}}>
-          <BlockContacts contacts={data.contacts} />
+          <BlockContacts className={style.cardInfoContacts} contacts={data.contacts} />
         </div>
         <div className={style.socials}>
           {data.socials.map((social, idx) => <Social key={idx} {...social} />)}

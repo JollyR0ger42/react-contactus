@@ -16,9 +16,9 @@ const Contact = ({ icon, text }) => {
   )
 }
 
-const BlockContacts = ({contacts}) => {
+const BlockContacts = ({contacts, className}) => {
   return (
-    <div className={style.contacts}>
+    <div className={`${style.contacts} ${className}`}>
       {contacts.map((contact, idx) => <Contact key={idx} {...contact} />)}
     </div>
   )

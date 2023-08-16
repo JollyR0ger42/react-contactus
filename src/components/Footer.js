@@ -38,8 +38,8 @@ export default function Footer({ contacts, groups, joinForm }) {
       <div className={style.footerContent}>
         <div>
           <h4 className={style.footerSubtitle}>{contacts.title}</h4>
-          <div style={{ height: '144px' }}>
-            <BlockContacts contacts={contacts.list} />
+          <div className={style.footerContactsWrapper}>
+            <BlockContacts className={style.footerContacts} contacts={contacts.list} />
           </div>
         </div>
         {groups.map((group, idx) => <Group key={idx} {...group} />)}

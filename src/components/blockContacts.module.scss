@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   font-size: 16px;
-  text-align: center;
+  align-items: inherit;
 
   @media (max-width: 640px) {
     font-size: 12px;
@@ -15,6 +15,7 @@
   }
 
   &Icon {
+    margin-top: 5px;
     margin-right: 27px;
 
     @media (max-width: 640px) {
@@ -30,9 +31,5 @@
   justify-content: space-between;
   height: 100%;
   font-family: var(--font-poppins);
-
-  @media (max-width: 640px) {
-    align-items: center;
-  }
 }
 

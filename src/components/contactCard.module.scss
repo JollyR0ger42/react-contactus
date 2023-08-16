@@ -31,6 +31,7 @@
         position: relative;
         bottom: -54px;
         right: 12%;
+        transform: scale(1);
 
         @media (max-width: 640px) {
           transform: scale(0.5);

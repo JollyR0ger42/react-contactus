@@ -51,6 +51,15 @@
       margin-bottom: 15px;
     }
   }
+
+  &Contacts {
+    align-items: flex-start;
+
+    @media (max-width: 640px) {
+      align-items: center;
+      text-align: center;
+    }
+  }
 }
 
 .socials {
