@@ -18,15 +18,9 @@ const DropdownLinks = ({ label, links }) => {
           alt="Logo"
         />
       </div>
-      <ul className={`${style.dropdownList} ${show ? '' : style.hidden}`}>
-        {links.map((link, idx) => {
-          return (
-            <li key={idx}>
-              <Element {...link} />
-            </li>
-          )
-        })}
-      </ul>
+      <div className={`${style.dropdownList} ${show ? '' : style.hidden}`}>
+        {links.map((link, idx) => <Element  key={idx} {...link} />)}
+      </div>
     </div>
   )
 }

@@ -22,7 +22,22 @@
     margin-bottom: 20px;
   }
 
-  &Content {
+  &Link {
+    color: #fff;
+    text-decoration: none;
 
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+  }
+
+  &Content {
+    display: flex;
+    justify-content: space-between;
+
+    &Group {
+      display: flex;
+      flex-direction: column;
+    }
   }
 }

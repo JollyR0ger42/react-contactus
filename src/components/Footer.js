@@ -2,6 +2,15 @@ import style from './footer.module.scss'
 import Image from 'next/image'
 import BlockContacts from './BlockContacts'
 
+const Group = ({title, links}) => {
+  return (
+    <div className={style.footerContentGroup}>
+      <h4 className={style.footerSubtitle}>{title}</h4>
+      {links.map((link, idx) => <a key={idx} className={style.footerLink} href={link.url}>{link.label}</a>)}
+    </div>
+  )
+}
+
 export default function Footer({ contacts, groups, joinForm }) {
   return (
     <nav className={style.footer}>
@@ -20,6 +29,7 @@ export default function Footer({ contacts, groups, joinForm }) {
             <BlockContacts contacts={contacts.list} />
           </div>
         </div>
+        {groups.map((group, idx) => <Group key={idx} {...group}/>)}
       </div>
     </nav>
   )
