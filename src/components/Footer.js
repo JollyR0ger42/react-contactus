@@ -2,7 +2,20 @@ import style from './footer.module.scss'
 import Image from 'next/image'
 import BlockContacts from './BlockContacts'
 
-const Group = ({title, links}) => {
+const JoinForm = ({ title, button, placeholder, help }) => {
+  return (
+    <form className={style.joinForm}>
+      <h4 className={style.footerSubtitle}>{title}</h4>
+      <div className={style.joinFormInput}>
+        <input className={style.joinFormInputInput} placeholder={placeholder} />
+        <input className={style.joinFormInputSubmit} type="submit" value={button} />
+      </div>
+      <p className={style.joinFormHelp}>{help}</p>
+    </form>
+  )
+}
+
+const Group = ({ title, links }) => {
   return (
     <div className={style.footerContentGroup}>
       <h4 className={style.footerSubtitle}>{title}</h4>
@@ -29,7 +42,8 @@ export default function Footer({ contacts, groups, joinForm }) {
             <BlockContacts contacts={contacts.list} />
           </div>
         </div>
-        {groups.map((group, idx) => <Group key={idx} {...group}/>)}
+        {groups.map((group, idx) => <Group key={idx} {...group} />)}
+        <JoinForm {...joinForm} />
       </div>
     </nav>
   )
