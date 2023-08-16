@@ -9,7 +9,9 @@ import Image from 'next/image'
 export default function ContactCard({ card }) {
   return (
     <div className={style.card}>
-      <CardInfo data={card.info} />
+      <div className={style.cardInfoWrapper}>
+        <CardInfo data={card.info} />
+      </div>
       <div className={style.cardFormWrapper}>
         <CardForm data={card.form} />
         <div className={style.cardFormWrapperBg}>
