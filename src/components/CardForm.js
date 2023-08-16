@@ -44,7 +44,7 @@ const SelectField = ({ register, data, values, className }) => {
   )
 }
 
-const Submit = ({label}) => {
+const Submit = ({ label }) => {
   return (
     <input className={style.submit} type="submit" value={label} />
   )
@@ -58,7 +58,7 @@ const CardForm = ({ data }) => {
   }
 
   return (
-    <form  className={style.cardForm} onSubmit={handleSubmit(onSubmit)}>
+    <form className={style.cardForm} onSubmit={handleSubmit(onSubmit)}>
       <div className={style.cardFormContacts}>
         <InputField label={data.firstName} register={register('firstName')} />
         <InputField label={data.lastName} register={register('lastName')} />

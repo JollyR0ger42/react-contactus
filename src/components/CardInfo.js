@@ -1,4 +1,4 @@
-import style from './contactCardInfo.module.scss'
+import style from './cardInfo.module.scss'
 import Image from 'next/image'
 
 const Contact = ({ icon, text }) => {

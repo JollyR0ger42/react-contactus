@@ -82,6 +82,9 @@
 .cardForm {
   display: flex;
   flex-direction: column;
+  position: relative;
+  z-index: 101;
+
   &Contacts {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -102,7 +105,9 @@
 }
 
 .submit {
-  padding: 15px 48px;
+  width: 100%;
+  max-width: 206px;
+  height: 52px;
   background-color: #000;
   border-radius: 5px;
   font-size: 16px;
