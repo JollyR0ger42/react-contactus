@@ -31,7 +31,9 @@ const CardInfo = ({ data }) => {
       <div className={style.cardInfoContent}>
         <h2 className={style.cardInfoTitle}>{data.title}</h2>
         <p className={style.cardInfoParag}>{data.parag}</p>
-        <BlockContacts contacts={data.contacts} />
+        <div style={{height: '200px'}}>
+          <BlockContacts contacts={data.contacts} />
+        </div>
         <div className={style.socials}>
           {data.socials.map((social, idx) => <Social key={idx} {...social} />)}
         </div>
