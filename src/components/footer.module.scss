@@ -46,6 +46,15 @@
       display: flex;
       flex-direction: column;
     }
+
+    @media (max-width: 640px) {
+      gap: 30px;
+
+      &>* {
+        max-width: 50%;
+        justify-content: center;
+      }
+    }
   }
 
   &ContactsWrapper {
@@ -54,7 +63,7 @@
     display: flex;
 
     @media (max-width: 640px) {
-      height: 220px;
+      height: 245px;
     }
   }
 
@@ -71,6 +80,11 @@
   padding: 14px;
   padding-bottom: 21px;
   font-family: var(--font-poppins);
+
+  @media (max-width: 640px) {
+    width: 100%;
+    max-width: 100%;
+  }
 
   &Help {
     font-size: 13px;
