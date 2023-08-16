@@ -45,20 +45,23 @@ export const getLayoutData = () => {
               }
             ],
             footer: {
-              contacts: [
-                {
-                  icon: 'phone',
-                  text: '+1012 3456 789',
-                },
-                {
-                  icon: 'email',
-                  text: 'demo@gmail.com',
-                },
-                {
-                  icon: 'location',
-                  text: '132 Dartmouth Street Boston,<br>Massachusetts 02156 United States',
-                }
-              ],
+              contacts: {
+                title: 'Reach Us',
+                list: [
+                  {
+                    icon: 'phone',
+                    text: '+1012 3456 789',
+                  },
+                  {
+                    icon: 'email',
+                    text: 'demo@gmail.com',
+                  },
+                  {
+                    icon: 'location',
+                    text: '132 Dartmouth Street Boston,<br>Massachusetts 02156 United States',
+                  }
+                ]
+              },
               groups: [
                 {
                   title: 'Company',

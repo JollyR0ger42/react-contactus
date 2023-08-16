@@ -51,18 +51,17 @@
   justify-content: center;
   align-items: center;
   transition: 0.5s all;
+  filter: invert(0);
 
   &:hover {
-    background-color: #fff;
+    filter: invert(1);
     transition: 0.5s all;
   }
 
   &Icon {
-    filter: invert(0);
     transition: 0.5s all;
   
     .social:hover & {
-      filter: invert(1);
       transition: 0.5s all;
     }
   }

@@ -40,7 +40,7 @@ export default async function RootLayout({ children }) {
         <main>
           {children}
         </main>
-        <Footer />
+        <Footer {...data.footer} />
       </body>
     </html>
   )
