@@ -12,11 +12,19 @@
   color: #fff;
   z-index: 1;
 
+  @media (max-width: 640px) {
+    padding: 15px 45px 25px;
+  }
+
   &Content {
     position: relative;
     display: flex;
     flex-direction: column;
     height: 100%;
+
+    @media (max-width: 640px) {
+      align-items: center;
+    }
   }
 
   &BgWrapper {
@@ -27,12 +35,21 @@
     font-size: 28px;
     font-weight: 600;
     margin-bottom: 6px;
+
+    @media (max-width: 640px) {
+      font-size: 20px;
+    }
   }
 
   &Parag {
     color: #C9C9C9;
     font-size: 18px;
     margin-bottom: 111px;
+
+    @media (max-width: 640px) {
+      font-size: 11px;
+      margin-bottom: 15px;
+    }
   }
 }
 
@@ -61,7 +78,7 @@
 
   &Icon {
     transition: 0.5s all;
-  
+
     .social:hover & {
       transition: 0.5s all;
     }
