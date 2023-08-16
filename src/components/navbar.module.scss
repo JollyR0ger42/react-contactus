@@ -62,11 +62,38 @@
   color: #000;
   font-size: 16px;
   font-family: var(--font-roboto);
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
 }
 
 .dropdown {
+  position: relative;
+  cursor: pointer;
+
   &List {
+    position: absolute;
     list-style: none;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 5px;
+    left: 0;
+    top: 25px;
+
+    & > *:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &Chev {
+    margin-left: 13px;
   }
 }
 
+.hidden {
+  display: none;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}

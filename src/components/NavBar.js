@@ -1,11 +1,24 @@
+"use client";
 import style from './navBar.module.scss'
 import Image from 'next/image'
+import {useState} from 'react'
 
 const DropdownLinks = ({ label, links }) => {
+  const [show, setShow] = useState(false);
+
   return (
-    <div className={style.dropdown}>
-      <p className={style.link}>{label}</p>
-      <ul className={style.dropdownList}>
+    <div onClick={() => setShow(!show)} className={style.dropdown}>
+      <div className={style.link}>
+        <p>{label}</p>
+        <Image
+          className={`${style.dropdownChev} ${show ? style.rotate: ''}`}
+          src="/static/chevron.svg"
+          width={10}
+          height={10}
+          alt="Logo"
+        />
+      </div>
+      <ul className={`${style.dropdownList} ${show ? '' : style.hidden}`}>
         {links.map((link, idx) => {
           return (
             <li key={idx}>
