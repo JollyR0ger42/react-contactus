@@ -1,4 +1,4 @@
-.navbar {
+.nav {
   z-index: 1001;
   position: absolute;
   padding: 40px 100px;
@@ -11,41 +11,49 @@
   @media (max-width: 800px) {
     padding: 20px 30px;
   }
-}
 
-.navLinks {
-  display: flex;
-  align-items: center;
-  flex: 1;
-  max-width: 55%;
-  justify-content: space-between;
-
-  @media (max-width: 800px) {
-    max-width: 100%;
+  &Links {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    max-width: 55%;
+    justify-content: space-between;
+  
+    @media (max-width: 800px) {
+      max-width: 100%;
+    }
   }
-}
 
-.elements {
-  flex: 1;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-right: 5%;
-
-  & > * {
-    margin-right: 10px;
+  &Logo {
+    margin-right: 15px;
   }
-}
 
-.userNav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 98px;
-  flex-grow: 4;
+  &Elements {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 5%;
+  
+    & > * {
+      margin-right: 10px;
+    }
+  }
 
-  & > *:not(:last-child) {
-    margin-right: 10px;
+  &User {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 98px;
+    flex-grow: 4;
+  
+    & > *:not(:last-child) {
+      margin-right: 10px;
+    }
+
+    &Icon {
+      height: 32px;
+    }
   }
 }
 
@@ -56,10 +64,9 @@
   font-family: var(--font-roboto);
 }
 
-.icon {
-  height: 32px;
+.dropdown {
+  &List {
+    list-style: none;
+  }
 }
 
-.logo {
-  margin-right: 15px;
-}
