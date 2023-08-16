@@ -44,9 +44,9 @@ const SelectField = ({ register, data, values, className }) => {
   )
 }
 
-const Submit = () => {
+const Submit = ({label}) => {
   return (
-    <input type="submit" />
+    <input className={style.submit} type="submit" value={label} />
   )
 }
 
@@ -77,7 +77,7 @@ const CardForm = ({ data }) => {
         register={register('message')}
         placeholder={data.message.placeholder}
       />
-      <Submit />
+      <Submit label={data.submitLabel} />
     </form>
   )
 }

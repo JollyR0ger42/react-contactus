@@ -80,6 +80,8 @@
 }
 
 .cardForm {
+  display: flex;
+  flex-direction: column;
   &Contacts {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -97,4 +99,15 @@
   &Message {
     margin-bottom: 45px;
   }
+}
+
+.submit {
+  padding: 15px 48px;
+  background-color: #000;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+  align-self: flex-end;
+  cursor: pointer;
 }

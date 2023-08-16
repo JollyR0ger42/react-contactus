@@ -107,10 +107,8 @@ export const getContactPageData = () => {
                     label: 'Message',
                     placeholder: 'Write your message..'
                   },
-                  submit: {
-                    label: 'Send Message',
-                    url: '/send_to'
-                  }
+                  submitLabel: 'Send Message',
+                  submitUrl: '/send_to',
                 }
               }
             }
