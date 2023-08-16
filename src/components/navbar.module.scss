@@ -16,7 +16,7 @@
     display: flex;
     align-items: center;
     flex: 1;
-    max-width: 55%;
+    max-width: 60%;
     justify-content: space-between;
   
     @media (max-width: 800px) {
@@ -86,7 +86,7 @@
   }
 
   &Chev {
-    margin-left: 13px;
+    margin-left: 8px;
   }
 }
 
